@@ -50,7 +50,7 @@ router.get("/:id", validateProjectID, (req, res) => {
 });
 
 // READ & get list of specific project's actions //
-router.get("/:id/posts", validateProjectID, (req, res) => {
+router.get("/:id/actions", validateProjectID, (req, res) => {
   ProjectsDb.getProjectActions(req.project.id)
     .then((actions) => [res.status(200).json({ actions })])
     .catch((error) => {
@@ -88,17 +88,15 @@ router.put("/:id", validateProjectID, validateProject, (req, res) => {
   const updateProject = req.params.id;
 
   ProjectsDb.update(updateProject, changes)
-    .then((count) => {
-      if (count > 0) {
+    .then((project) => {
         res.status(200).json({
-          count,
           message: "Project successfully updated in our database.",
+          project
         });
-      }
     })
     .catch((error) => {
       console.log(error);
-      res.status(500).json({ error: "Project could not be updated." });
+      res.status(500).json({ error: "Project could not be updated.", error });
     });
 });
 
