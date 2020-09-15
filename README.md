@@ -61,10 +61,41 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. The core features of Node.js and Express and why they are useful.
+
+Using Node.js, which is single-threaded and asynchronous, allows us to write JavaScript on the server and access the Npm repository full of useful librabries.
+Express allows us to use: 
+Middleware functions.
+Convenience helpers to simplify writing web apps and API servers.
+Views to dynamically render HTML on the server.
+The Routing feature which provides a way to break an application into smaller parts.
+The Express framework on top of Node.js makes it easier to create web applications and services.
+
+
 1. Understand and explain the use of Middleware?
+
+Middleware is used to add extra functionality to an application and provides an easy way to modularize our code. Tasks like authentication and logging are commonly handled by middleware. 
+
+
 1. The basic principles of the REST architectural style.
+
+REST is a generally agreed-upon set of principles and constraints. They are recommendations, not a standard. When designing a RESTful Web API, we follow these principles:
+Everything is a resource. 
+Each resource is accessible via a unique URL. 
+Resources can have multiple representations. 
+Communication happens over a stateless protocol (HTTP). 
+Resource management happens via HTTP methods.
+
+
 1. Understand and explain the use of Express Routers.
+
+In Express, routing is one of the main features. Using routing we can map incoming requests to the appropriate request handler based on the URL and HTTP Method used.
+Routing simplifies building RESTful Web APIs because we can have a single URL per resource and still be able to run different code based on the HTTP Method used.
+
+
 1. Describe tooling used to manually test the correctness of an API.
+
+I use Postman which allows you to simulate CRUD requests to a certain URL resource. You can see what is returned from your promises - results and error messages alike - and 
+are able to adjust your code accordingly.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 

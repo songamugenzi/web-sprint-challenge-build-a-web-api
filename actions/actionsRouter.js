@@ -52,13 +52,11 @@ router.put("/:id", validateActionID, validateAction, (req, res) => {
   const updateAction = req.params.id;
 
   ActionsDb.update(updateAction, changes)
-    .then((count) => {
-      if (count > 0) {
+    .then((action) => {
         res.status(200).json({
-          count,
           message: "Action successfully updated in our database.",
+          action
         });
-      }
     })
     .catch((error) => {
       console.log(error);
